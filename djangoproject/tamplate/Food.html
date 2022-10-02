@@ -56,12 +56,15 @@
                           </tr>
                         </thead>
                         <tbody>
+                            {% for data in food_dt%}
                             <tr>
-                                <td>{{f1}}</td>
-                                <td>{{f2}}</td>
-                                <td>{{f3}}</td>
-                                <td>{{f4}}</td>
+                                <td>{{data.Food_id}}</td>
+                                <td>{{data.Food_name}}</td>
+                                <td>{{data.Food_price}}</td>
+                                <td>{{data.Food_cate}}</td>
+                                
                             </tr>
+                            {%endfor%}
                         </tbody>
                     </table>
                 </div>
