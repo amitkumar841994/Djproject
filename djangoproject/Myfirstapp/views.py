@@ -10,4 +10,7 @@ def food(request):
      cate=request.POST.get('Foodcat')
      food=[{'f1':id,'f2':name,'f3':price,'f4':cate}]
      return render(request,'Food.html',{'f1':id,'f2':name,'f3':price,'f4':cate})
+
+def login(request):
+     return render(request,'Login.html')     
 # Create your views here.
