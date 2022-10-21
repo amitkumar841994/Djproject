@@ -1,3 +1,5 @@
+from distutils.command.upload import upload
+from unicodedata import category
 from django.db import models
 
 class Food(models.Model):
@@ -12,6 +14,13 @@ class User(models.Model):
         User_name = models.CharField(max_length=50)
         User_email =models.CharField(max_length=50)
         User_mobile = models.IntegerField()
+
+class Store(models.Model):
+    title=models.CharField(max_length=50)
+    descriptions=models.CharField(max_length=50)
+    img=models.ImageField(upload_to="str_image")
+    price=models.IntegerField()
+    category=models.CharField(max_length=50)
     
 
 

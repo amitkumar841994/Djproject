@@ -1,0 +1,43 @@
+{%extends 'index.html'%}
+{%block content%}
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div class="container">
+            <table class="table table-success table-striped ">
+                
+                <tr>
+                    <th scope="col">First Name</th>
+                    <td>{{usrdt.FirstName}}</td>
+                </tr>
+                <tr>
+                    <th scope="col">Last Name</th>
+                    <td>{{usrdt.LastName}}</td>
+                </tr>
+                <tr>
+                    <th scope="col">Father Name</th>
+                    <td>{{usrdt.FatherName}}</td>
+                </tr>
+                <tr>
+                    <th scope="col">Mother Name</th>
+                    <td>{{usrdt.MotherName}}</td>
+                </tr>
+                <tr>
+                    <th scope="col">Email Id</th>
+                    <td>{{usrdt.EmailId}}</td>
+                </tr>
+                <tr>
+                    <th scope="col">Gender</th>
+                    <td>{{usrdt.Gender}}</td>
+                </tr>
+                <tr>
+                    <th scope="col">Descriptions</th>
+                    <td>{{usrdt.Descripiton}}</td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
+{%endblock%}
