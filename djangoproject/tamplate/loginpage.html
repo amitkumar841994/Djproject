@@ -1,0 +1,36 @@
+{%extends 'index.html'%}
+{% block content%}
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 mx-auto">
+                    <form method="POST">
+                        {%csrf_token%}
+                        <!-- Email input -->
+                        <div class=" form-outline mx-auto">
+                        <input type="text" id="form2Example1" name="username" class="form-control" />
+                        <label class="form-label" for="form2Example1">Username</label>
+                        </div>
+                    
+                        <!-- Password input -->
+                        <div class="form-outline mb-4">
+                        <input type="password" id="form2Example2" name="password" class="form-control" />
+                        <label class="form-label" for="form2Example2">Password</label>
+                        </div>
+                
+                    
+                        <!-- Submit button -->
+                        <button type="submit" class="btn btn-primary btn-block mx-auto">Sign in</button>
+                    
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
+{%endblock%}

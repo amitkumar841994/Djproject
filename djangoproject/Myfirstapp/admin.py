@@ -1,6 +1,6 @@
 from ast import Store
 from django.contrib import admin
-from.models import Food,User,Store
+from.models import Food,User,Store,Job,test
 class Food_admin(admin.ModelAdmin):
     list_display=['Food_id','Food_name','Food_price','Food_cate']
 
@@ -12,8 +12,18 @@ class User_admin(admin.ModelAdmin):
 admin.site.register(User,User_admin)
 
 class Store_admin(admin.ModelAdmin):
-    list_display=['title','descriptions','img','price','category']
+    list_display=['id','title','descriptions','img','price','category']
     
 admin.site.register(Store,Store_admin)
+
+class Job_admin(admin.ModelAdmin):
+    list_display=['posting_date','location','offeredsalary','qualification']
+
+admin.site.register(Job,Job_admin)
+
+class Test_admin(admin.ModelAdmin):
+    list_display=['carname','gender']
+
+admin.site.register(test,Test_admin)
 
 # Register your models here.

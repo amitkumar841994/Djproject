@@ -18,17 +18,20 @@
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                   <a class="nav-link active" aria-current="page" href="{% url 'food'%}">Food details</a>
-                  <a class="nav-link active" aria-current="page"  href="{%url 'login'%}">Login</a>
+                  <a class="nav-link active" aria-current="page"  href="{%url 'loginpage'%}">Login</a>
                   <a class="nav-link active" aria-current="page" href="#">Pricing</a>
-                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                  <a class="nav-link active" aria-current="page" href="{%url 'store'%}">Store</a>
                 </div>
+              </div>
+              <div>
+                <a class="nav-link active" aria-current="page" href="{%url 'logoutpage'%}">Logout</a>
               </div>
             </div>
           </nav><br>
           {%block content%}
           {%endblock%}
 
-          <footer class="fixed-bottom text-center text-white" style="background-color: #f1f1f1;">
+          <footer class="sticky-bottom text-center text-white" style="background-color: #f1f1f1;">
             <!-- Grid container -->
             <div class="container pt-4">
               <!-- Section: Social media -->

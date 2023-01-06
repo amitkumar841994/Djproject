@@ -5,28 +5,31 @@
     <body>
         <div class="row">
             <div class="col">
-                <button type="button" name="jewelery" value="jewelery"> jewelery</button>
-                <button>men's clothing</button>
-                <button> women's clothing</button>
-                <button>All product</button>
+                <a href="{% url 'store_search' 'jewelery'%}"><button>jewelery</button></a>
+                <a href="{% url 'store_search' 'electronics'%}"><button>electronics</button></a>
+                <a href="{% url 'store_search' "women's clothing" %}"><button>women's clothing</button></a>
+                <a href="{% url 'store_search' "men's clothing" %}"><button>men's clothing</button></a>
+                <a href="{% url 'store' %}"><button>All Product</button></a>
             </div>
         </div>
         
         <div class="row">
-        
+        {% for data in str_data %}
             <div class="col-3">
                 <div class="card" style="width: 18rem;">
-                    <img src={{dt.image}} class="card-img-top" alt="...">
+                    <img src={{data.img}} class="card-img-top" alt="...">
                     <div class="card-body">
-                    <h5 class="card-title">{{dt.title}}</h5>
-                    <p class="card-text">{{dt.price}}</p>
-                    <p class="card-text">{{dt.description}}</p>
-                    <p class="card-text"><b>{{dt.category}}</b></p>
+                    <h5 class="card-title">{{data.title}}</h5>
+                    <p class="card-text">{{data.price}}</p>
+                    <p class="card-text">{{data.description}}</p>
+                    <p class="card-text"><b>{{data.category}}</b></p>
                     <a href="{%url 'viewstore' data.id %}"><button type="button" class="btn btn-primary">View Store</button></a>
+
                     </div>
                     
                 </div>
             </div>
+            {%endfor%}
         </div>
     </body>
 </html>

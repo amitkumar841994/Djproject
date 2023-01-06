@@ -1,0 +1,62 @@
+{%extends 'index.html'%}
+{%block content%}
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+       <div class="containter">
+            <div class="row">
+                </div class="col">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <label for="">Username</label>
+                        <input type="text" name="username"><br>
+
+                        <label for="">Password</label>
+                        <input type="password" name="pwd1"><br>
+
+                        <label for="">RE enter Password</label>
+                        <input type="password" name="pwd2"><br>
+
+                        <label for="">First name</label>
+                        <input type="text" name="fname"><br>
+
+                        <label for="">Last name</label>
+                        <input type="text" name="lname"><br>
+
+                        <button type="submit">register</button><br>
+                        <h1>{{msg1}}</h1>
+
+                    </form>
+                </div>
+                <div class="col">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Sr.no.</th>
+                            <th scope="col">Username</th>
+                            <th scope="col">First name</th>
+                            <th scope="col">Last name</th>
+                            <th scope="col">Actions</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            {% for data in userdt1%}
+                            <tr>
+                                <td>{{data.id}}</td>
+                                <td>{{data.username}}</td>
+                                <td>{{data.first_name}}</td>
+                                <td>{{data.last_name}}</td>
+                                <td><a href="{%url 'userdel' data.id %}"><button type="button" class="btn btn-info">Edit</button></a></td>
+                                <td><a href="{%url 'userdel' data.id %}"><button class="btn btn-danger">Delete</button></a></td>
+                            </tr>
+                            {%endfor%}
+                        </tbody>   
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+{%endblock%}

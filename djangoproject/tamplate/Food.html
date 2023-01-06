@@ -16,6 +16,11 @@
         <div class="Container">
             
             <div class="row">
+                <form class="d-flex" method="post">
+                    {%csrf_token%}
+                    <input class="form-control me-2" type="search" placeholder="Search" name="search" aria-label="Search">
+                    <button class="btn btn-success" type="submit">Search</button>
+                  </form>
                 <div class="col">
                     <form method="post">
                         {% csrf_token %}
@@ -67,16 +72,16 @@
                                 <td>{{data.Food_name}}</td>
                                 <td>{{data.Food_price}}</td>
                                 <td>{{data.Food_cate}}</td>
-                                <td><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"><a href="{%url 'update' data.id %}">Edit</a></button></td>
+                                <td><a href="{%url 'update' data.id %}"><button type="button" class="btn btn-info">Edit</button></a></td>
                                 <td><a href="{%url 'delete' data.id %}"><button class="btn btn-danger">Delete</button></a></td>
                             </tr>
                             {%endfor%}
-                        </tbody>
+                        </tbody>   
                     </table>
                 </div>
             </div>
 
-  <!-- Modal -->
+
 
 
 

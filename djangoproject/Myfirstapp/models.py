@@ -21,6 +21,21 @@ class Store(models.Model):
     img=models.ImageField(upload_to="str_image")
     price=models.IntegerField()
     category=models.CharField(max_length=50)
+
+class Job(models.Model):
+    posting_date=models.DateField()
+    location=models.CharField(max_length=50)
+    offeredsalary=models.IntegerField()
+    qualification=models.CharField(max_length=150)
+
+class test(models.Model):
+    carname=models.CharField(max_length=100)
+    gender=models.CharField(max_length=100)
+
+
+
+
+
     
 
 
